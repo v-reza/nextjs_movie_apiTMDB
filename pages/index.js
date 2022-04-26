@@ -29,7 +29,7 @@ const Home = (props) => {
   }
 
   useEffect(() => {
-    setMovie(results)
+    setMovie(props.data)
   }, [])
 
   return (
@@ -42,7 +42,7 @@ const Home = (props) => {
           {
             movie && movie.length > 0 ? movie.map((item) => (
               <div className="col" key={item.id}>
-                <Link href={`detail/${item.id}`}>
+                <Link passHref href={`detail/${item.id}`}>
                   <div className="card h-100 hoverable">
                     <img src={imgUrl + item.poster_path} className="card-img-top" alt="Skyscrapers" />
                     <div className='img_description_layer'>

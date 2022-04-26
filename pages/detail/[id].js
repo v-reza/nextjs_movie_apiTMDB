@@ -14,25 +14,25 @@ const DetailMovies = ({ data }) => {
         <div className='row'>
           <div className='col-sm'>
             <div className='d-flex justify-content-start px-2'>
-              <div class="card mt-3 hoverable" style={{ width: "18rem", height: "100%" }}>
-                <img class="card-img-top" src={imgUrl + data.poster_path} alt="Card image cap"></img>
-                <div class="card-body">
+              <div className="card mt-3 hoverable" style={{ width: "18rem", height: "100%" }}>
+                <img className="card-img-top" src={imgUrl + data.poster_path} alt="Card image cap"></img>
+                <div className="card-body">
                   <h5 className="card-title">{data.original_title}</h5>
-                  <p class="card-text">{data.overview}</p>
+                  <p className="card-text">{data.overview}</p>
                 </div>
               </div>
               <div className='mt-3 px-2'>
                 <h3 style={{ color: "#fff" }}>Genre</h3>
                 <nav aria-label="breadcrumb" className='px-1'>
-                  <ol class="breadcrumb" style={{ color: "blueviolet" }}>
+                  <ol className="breadcrumb" style={{ color: "blueviolet" }}>
                     {data.genres.map((genre) => (
-                      <li class="breadcrumb-item"><Link href={`/`}><a>{genre.name}</a></Link></li>
+                      <li className="breadcrumb-item" key={genre.name}><Link passHref href={`/`}><a>{genre.name}</a></Link></li>
                     ))}
                   </ol>
                 </nav>
                 <div className='mt-2'>
                   <h3 style={{ color: "#fff" }}>Home Page</h3>
-                  <Link href={data.homepage}><span style={{ color: "blue", cursor: "pointer" }}>{data.homepage}</span></Link>
+                  <Link passHref href={data.homepage}><span style={{ color: "blue", cursor: "pointer" }}>{data.homepage}</span></Link>
                 </div>
 
                 <div className='mt-3'>
@@ -88,17 +88,17 @@ const DetailMovies = ({ data }) => {
                 <h3 style={{ color: "#fff" }}>Production Countries</h3>
                 <ol style={{ color: "#fff" }}>
                   {data.production_countries.map((production) => (
-                    <li><span style={{ color: "#fff" }}>{production.name}</span></li>
+                    <li key={production.name}><span style={{ color: "#fff" }}>{production.name}</span></li>
                   ))}
                 </ol>
                 <div className='mt-3'>
                   <h3 style={{ color: "#fff" }}>Production Companies</h3>
                   <div className='container'>
-                    <div class='row'>
+                    <div className='row'>
                       <div className='col'>
                         <ol style={{color: "#fff"}} >
                           {data.production_companies.map((production_comp) => (
-                            <li><span style={{ color: "#fff" }}>{production_comp.name}</span></li>
+                            <li key={production_comp.name}><span style={{ color: "#fff" }}>{production_comp.name}</span></li>
                           ))}
                         </ol>
                       </div>

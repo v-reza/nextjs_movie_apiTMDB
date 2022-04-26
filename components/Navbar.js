@@ -28,7 +28,7 @@ const Navbar = (props) => {
                         {/* <!-- Left links --> */}
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" href={`/`}>
+                                <Link className="nav-link active" passHref href={`/`}>
                                     <span className="nav-link active" aria-current="page" style={{ cursor: "pointer" }}>Home</span>
                                 </Link>
                             </li>
