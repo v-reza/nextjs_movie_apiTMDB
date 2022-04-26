@@ -29,7 +29,7 @@ const Home = (props) => {
   }
 
   useEffect(() => {
-    setMovie(props.data)
+    setMovie(results)
   }, [])
 
   return (
